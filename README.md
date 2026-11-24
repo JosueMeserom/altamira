@@ -9,6 +9,7 @@ A small collection of userscripts. Named after the cave of Altamira: paintings m
 | Script | What it does | Install |
 |---|---|---|
 | [YouTube Playlist Search](#youtube-playlist-search) | Search every video of a YouTube playlist without scrolling | [Install](https://raw.githubusercontent.com/JosueMeserom/altamira/main/youtube-playlist-search/youtube-playlist-search.user.js) |
+| [YouTube Original Audio](#youtube-original-audio) | Always play a video's original audio, never a dub | [Install](https://raw.githubusercontent.com/JosueMeserom/altamira/main/youtube-original-audio/youtube-original-audio.user.js) |
 
 To install one you need a userscript manager such as [Violentmonkey](https://violentmonkey.github.io/) or [Tampermonkey](https://www.tampermonkey.net/). Click **Install** and the manager will offer to add it; updates arrive on their own.
 
@@ -33,6 +34,20 @@ Finding one video in a long playlist with Ctrl+F only works on the videos that h
 ### Privacy
 
 Everything stays in your browser. The script only talks to `youtube.com`, with your own session, and keeps its cache in the browser's storage for that site. Nothing is sent anywhere else.
+
+## YouTube Original Audio
+
+When your language differs from a video's, YouTube may play a dub instead of the original voice: an AI auto-dub, or a dub the creator uploaded. This script makes every video start with its original audio track.
+
+- **Before the video starts.** As soon as the player receives a new video, before the first frame plays, the script asks it to use the track tagged as original. Nothing restarts and there is no audible switch.
+- **No extra loading.** It makes no network requests and does not touch YouTube's data, it only talks to the player that is already there. In tests, videos that needed the switch started about a tenth of a second later than without the script.
+- **Your choice wins.** It only acts during the first second and a half of each video. If you pick another track by hand, it stays until the next video.
+- Watch pages, Shorts and embedded players on other sites.
+
+### Things to know
+
+- If a video has no track marked as original, the script leaves it alone.
+- It relies on YouTube's player API and on how YouTube labels its tracks. If YouTube changes either, it may stop working: please [open an issue](https://github.com/JosueMeserom/altamira/issues).
 
 ## License
 

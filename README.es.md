@@ -9,6 +9,7 @@ Una pequeña colección de userscripts. El nombre viene de la cueva de Altamira:
 | Script | Qué hace | Instalar |
 |---|---|---|
 | [Buscador en listas de YouTube](#buscador-en-listas-de-youtube) | Busca en todos los vídeos de una lista de YouTube sin hacer scroll | [Instalar](https://raw.githubusercontent.com/JosueMeserom/altamira/main/youtube-playlist-search/youtube-playlist-search.user.js) |
+| [Audio original en YouTube](#audio-original-en-youtube) | Reproduce siempre el audio original de cada vídeo, nunca un doblaje | [Instalar](https://raw.githubusercontent.com/JosueMeserom/altamira/main/youtube-original-audio/youtube-original-audio.user.js) |
 
 Para instalar uno hace falta un gestor de userscripts como [Violentmonkey](https://violentmonkey.github.io/) o [Tampermonkey](https://www.tampermonkey.net/). Pulsa **Instalar** y el gestor te ofrecerá añadirlo; las actualizaciones llegan solas.
 
@@ -33,6 +34,20 @@ Buscar un vídeo en una lista larga con Ctrl+F solo funciona con los vídeos que
 ### Privacidad
 
 Todo se queda en tu navegador. El script solo habla con `youtube.com`, con tu propia sesión, y guarda su caché en el almacenamiento del navegador para ese sitio. No se envía nada a ningún otro lugar.
+
+## Audio original en YouTube
+
+Cuando tu idioma no es el del vídeo, YouTube puede poner un doblaje en lugar de la voz original: uno automático hecho con IA o uno que ha subido el creador. Este script hace que todos los vídeos empiecen con su pista de audio original.
+
+- **Antes de que empiece el vídeo.** En cuanto el reproductor recibe un vídeo nuevo, antes del primer fotograma, el script le pide que use la pista marcada como original. Nada se reinicia y no se oye el cambio.
+- **Sin cargas extra.** No hace peticiones a la red ni toca los datos de YouTube: solo habla con el reproductor que ya está ahí. En las pruebas, los vídeos que necesitaban el cambio arrancaron alrededor de una décima de segundo más tarde que sin el script.
+- **Manda tu elección.** Solo actúa durante el primer segundo y medio de cada vídeo. Si eliges otra pista a mano, se queda hasta el siguiente vídeo.
+- Páginas de vídeo, Shorts y reproductores incrustados en otras webs.
+
+### A tener en cuenta
+
+- Si un vídeo no tiene ninguna pista marcada como original, el script no lo toca.
+- Depende de la API del reproductor de YouTube y de cómo etiqueta sus pistas. Si YouTube cambia alguna de las dos cosas, puede dejar de funcionar: [abre una incidencia](https://github.com/JosueMeserom/altamira/issues).
 
 ## Licencia
 
