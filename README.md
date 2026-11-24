@@ -41,7 +41,7 @@ When your language differs from a video's, YouTube may play a dub instead of the
 
 - **Before the video starts.** As soon as the player receives a new video, before the first frame plays, the script asks it to use the track tagged as original. Nothing restarts and there is no audible switch.
 - **No extra loading.** It makes no network requests and does not touch YouTube's data, it only talks to the player that is already there. In tests, videos that needed the switch started about a tenth of a second later than without the script.
-- **Your choice wins.** It only acts during the first second and a half of each video. If you pick another track by hand, it stays until the next video.
+- **Your choice wins.** It only acts during the first second and a half of each new video, wherever it starts (a link with `&t=`, or YouTube resuming where you left off). If you pick another track by hand, it stays until the next video, even if you go back to the beginning or put it on loop.
 - Watch pages, Shorts and embedded players on other sites.
 
 ### Things to know

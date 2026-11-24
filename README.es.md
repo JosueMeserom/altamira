@@ -41,7 +41,7 @@ Cuando tu idioma no es el del vídeo, YouTube puede poner un doblaje en lugar de
 
 - **Antes de que empiece el vídeo.** En cuanto el reproductor recibe un vídeo nuevo, antes del primer fotograma, el script le pide que use la pista marcada como original. Nada se reinicia y no se oye el cambio.
 - **Sin cargas extra.** No hace peticiones a la red ni toca los datos de YouTube: solo habla con el reproductor que ya está ahí. En las pruebas, los vídeos que necesitaban el cambio arrancaron alrededor de una décima de segundo más tarde que sin el script.
-- **Manda tu elección.** Solo actúa durante el primer segundo y medio de cada vídeo. Si eliges otra pista a mano, se queda hasta el siguiente vídeo.
+- **Manda tu elección.** Solo actúa durante el primer segundo y medio de cada vídeo nuevo, empiece donde empiece (un enlace con `&t=`, o YouTube retomándolo donde lo dejaste). Si eliges otra pista a mano, se queda hasta el siguiente vídeo, aunque vuelvas al principio o lo pongas en bucle.
 - Páginas de vídeo, Shorts y reproductores incrustados en otras webs.
 
 ### A tener en cuenta
